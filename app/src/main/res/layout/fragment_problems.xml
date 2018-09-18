@@ -1,0 +1,64 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.amittiwari.epilux.Problems">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/problemeasy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+
+                android:background="@drawable/buttonstyle"
+                android:text="Easy"
+                android:textColor="#fff" />
+            <Button
+                android:id="@+id/problemmedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/buttonstyle"
+                android:text="medium"
+                android:textColor="#fff" />
+            <Button
+                android:id="@+id/problemhard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+
+                android:background="@drawable/buttonstyle"
+                android:text="Hard"
+                android:textColor="#fff" />
+            <Button
+                android:id="@+id/problemchallenge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+
+                android:background="@drawable/buttonstyle"
+                android:text="challenge"
+                android:textColor="#fff" />
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+    <ListView
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/problemslist"
+        />
+
+</FrameLayout>

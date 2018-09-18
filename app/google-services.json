@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "204717713516",
+    "firebase_url": "https://epilux-ad89e.firebaseio.com",
+    "project_id": "epilux-ad89e",
+    "storage_bucket": "epilux-ad89e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204717713516:android:be92cb9eb0dcc2db",
+        "android_client_info": {
+          "package_name": "com.example.amittiwari.epilux"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204717713516-lpae2pmes0lo533qde28n7g2j92j752u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.amittiwari.epilux",
+            "certificate_hash": "e34fdc474a574ce1fdca76c20d8a7bff8e93ab71"
+          }
+        },
+        {
+          "client_id": "204717713516-k8hna2gn8jtvf3i8b2im2909nus8ljnr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmBL-BzWMGFBelcRb7MFKqwvUd9MoR56I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204717713516-k8hna2gn8jtvf3i8b2im2909nus8ljnr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
