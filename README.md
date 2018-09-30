@@ -11,4 +11,4 @@ and schedule themselves for the challenges.
 
 
 Alibaba cloud server code folder has all php script for the backend notification
-It has also sql file codechef.sql
+It has also database file sql file <b> codechef.sql </b>
