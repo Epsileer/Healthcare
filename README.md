@@ -8,3 +8,7 @@ viewing problems anywhere and at any time.
 With the era of mobile apps , we think that a portable and fast version of codechef
 android app will surely help coder and programmer community to enhance their skills
 and schedule themselves for the challenges.
+
+
+Alibaba cloud server code folder has all php script for the backend notification
+It has also sql file codechef.sql
