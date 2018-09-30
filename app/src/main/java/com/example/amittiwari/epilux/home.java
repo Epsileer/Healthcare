@@ -147,7 +147,7 @@ public class home extends Fragment {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             view.loadUrl(url);
-            if(url.indexOf("http://149.129.135.60/epilux/welcome.php") > -1 )
+            if(url.indexOf("http://149.129.134.169/epilux/welcome.php") > -1 )
             {
                 String Url = url;
                 int l = Url.indexOf('&') - Url.indexOf('=') -1;
@@ -168,7 +168,7 @@ public class home extends Fragment {
         }
         public void onPageStarted(WebView view, String url) {
 
-            if(url.indexOf("http://149.129.135.60/epilux/welcome.php") > -1 )
+            if(url.indexOf("http://149.129.134.169/epilux/welcome.php") > -1 )
             {
                 Toast.makeText(getContext(),url,Toast.LENGTH_LONG).show();
             }
@@ -291,7 +291,7 @@ public class home extends Fragment {
 
         Log.d("usernam&fullname&device",username+" "+fullname+" "+device);
 
-        String url = "http://149.129.135.60/server/RegisterDevice.php?username="+username+"&device="+device;
+        String url = "http://149.129.134.169/server/RegisterDevice.php?username="+username+"&device="+device;
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
 

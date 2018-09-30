@@ -4,7 +4,7 @@ public class Apiurls {
 
 
     final public static String authurl ="https://api.codechef.com/oauth/token";
-    final public static String redirecturl = "http://149.129.135.60/epilux/welcome.php";
+    final public static String redirecturl = "http://149.129.134.169/epilux/welcome.php";
     final public static String allcontest = "https://api.codechef.com/contests";
     final public static String paticyularcontest = "";
     final public static String rating = "https://api.codechef.com/ratings/all?";

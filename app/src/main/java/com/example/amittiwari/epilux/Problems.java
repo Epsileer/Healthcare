@@ -1,5 +1,6 @@
 package com.example.amittiwari.epilux;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,6 +25,8 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.amittiwari.epilux.model.Prob;
+import com.example.amittiwari.epilux.services.DatabaseHandler;
 import com.example.amittiwari.epilux.services.MySingleton;
 import com.example.amittiwari.epilux.services.Session;
 import com.example.amittiwari.epilux.services.User;
@@ -61,8 +64,10 @@ public class Problems extends Fragment implements View.OnClickListener {
     JSONArray  jsonArray;
     ProgressBar pb;
     List<String> programname ;
+    List<Boolean> viewed;
     Toolbar toolbar;
     Button easy,medium,hard,challenge;
+    DatabaseHandler db;
     private OnFragmentInteractionListener mListener;
 
     public Problems() {
@@ -111,11 +116,14 @@ public class Problems extends Fragment implements View.OnClickListener {
      session = new Session(getContext());
      getActivity().findViewById(R.id.search1).setVisibility(View.GONE);
         programname = new ArrayList<>();
+        viewed = new ArrayList<>();
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 try {
                     String code = jsonArray.getJSONObject(position).getString("problemCode");
+                    Prob prob = new Prob(code);
+                    db.addProblem(prob);
                     swapFragment(new Questions(),code);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -215,6 +223,7 @@ public class Problems extends Fragment implements View.OnClickListener {
 
                     @Override
                     public void onResponse(JSONObject response) {
+                        db = new DatabaseHandler(getContext());
                         Log.d("epsileer","this is inner error "+session.getUser().getReft());
                         try {
                             if(response.get("status").equals("OK")){
@@ -225,9 +234,14 @@ public class Problems extends Fragment implements View.OnClickListener {
                                 for(int i=0;i<jsonArray.length();i++)
                                 {
                                     programname.add(jsonArray.getJSONObject(i).getString("problemName"));
+                                    if(db.getProb(jsonArray.getJSONObject(i).getString("problemCode"))){
+                                        viewed.add(true);
+                                    }
+                                    else
+                                        viewed.add(false);
                                 }
 
-                                ArrayAdapter ab = new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,programname);
+                                MyListAdapter ab=new MyListAdapter((Activity) getContext(), programname, viewed);
                                 lv.setAdapter(ab);
                                 ab.notifyDataSetChanged();
 

@@ -66,7 +66,7 @@ public class Questions extends Fragment {
     ProgressBar pb;
     WebView wb;
     TextView sourceSizeLimit,maxTimeLimit,challengeType,author,successfulSubmissions,totalSubmissions,partialSubmissions,tags;
-    Button ques;
+    Button ques,submitPro;
     public String body;
     HListView hv;
     List<String> tag;
@@ -141,8 +141,8 @@ public class Questions extends Fragment {
                 swapFragment(new QuestionWebView(),body);
             }
         });
-   tag = new ArrayList<>();
-
+        tag = new ArrayList<>();
+        submitPro = v.findViewById(R.id.submitPro);
 
         name = v.findViewById(R.id.questionname);
         code = v.findViewById(R.id.questioncode);
@@ -150,7 +150,7 @@ public class Questions extends Fragment {
         pb.setVisibility(View.VISIBLE);
         session = new Session(getContext());
         getActivity().findViewById(R.id.search1).setVisibility(View.GONE);
-        Bundle b = getArguments();
+        final Bundle b = getArguments();
         hv = v.findViewById(R.id.hlist1);
         Call(b.getString("code"),b.getString("ccode"));
         hv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -165,6 +165,15 @@ public class Questions extends Fragment {
                 fragment.setArguments(b);
                 transaction.replace(R.id.fragment_container, fragment);
                 transaction.commit();
+            }
+        });
+
+        submitPro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://www.codechef.com/problems/"+b.getString("code");
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(browserIntent);
             }
         });
 
