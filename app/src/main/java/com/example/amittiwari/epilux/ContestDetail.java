@@ -310,7 +310,7 @@ public class ContestDetail extends Fragment {
         transaction.commit();
     }
     public void setForContestNotification(){
-        String url = "http://149.129.135.60/server/Registerevent.php?username="+session.getUsername()+"&eventcode="+contestname;
+        String url = "http://149.129.134.169/server/Registerevent.php?username="+session.getUsername()+"&eventcode="+contestname;
         final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
 
